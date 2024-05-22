@@ -21,22 +21,22 @@
 			<div class="flex gap-x-10">
 				<ul class="flex flex-1 gap-x-5 uppercase justify-between">
 					<li>
-						<a class="hover:underline" href="home.php">Home</a>
+						<a class="hover:underline" href="/">Home</a>
 					</li>
 					<li>
-						<a class="hover:underline" href="collection.php">Collection</a>
+						<a class="hover:underline" href="collection">Collection</a>
 					</li>
 					<li class="font-bold underline">
-						<a class="hover:underline" href="products.php">Our Product</a>
+						<a class="hover:underline" href="products">Our Product</a>
 					</li>
 					<li>
-						<a class="hover:underline" href="arrival.php">New Arrival</a>
+						<a class="hover:underline" href="arrival">New Arrival</a>
 					</li>
 					<li>
-						<a class="hover:underline" href="bestseller.php">Best Seller</a>
+						<a class="hover:underline" href="bestseller">Best Seller</a>
 					</li>
 					<li>
-						<a class="hover:underline" href="about.php">About Us</a>
+						<a class="hover:underline" href="about">About Us</a>
 					</li>
 				</ul>
 				<div class="flex gap-x-5 flex-none">
