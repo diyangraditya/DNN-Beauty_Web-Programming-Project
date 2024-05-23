@@ -1,7 +1,7 @@
 <?php
 
 if (isset($_POST['submit'])) {
-    header("Location: home.php");
+    header("Location: home");
     exit();
 }
 ?>
@@ -19,7 +19,7 @@ if (isset($_POST['submit'])) {
 <body class="h-screen bg-no-repeat bg-cover bg-login flex items-center justify-center font-poppins">
         <div class="flex flex-col bg-[#FAE1F5] w-[30%] px-9 py-12">
             <h1 class="text-[#FF69B4] text-3xl font-bold text-center">Log In</h1>
-            <form action="home.php" method="POST" class="flex flex-col mt-14 mb-8">
+            <form action="home" method="POST" class="flex flex-col mt-14 mb-8">
                 <input type="email" name="email" id="email" class="border border-[#FD4E5D] rounded-md py-2 px-3 mb-5" placeholder="Your Username/Email" required />
                 <input type="password" name="password" id="password" class="border border-[#FD4E5D] rounded-md py-2 px-3 mb-1" placeholder="Your Password" required />
                 <a class="text-sm" href="#">Lupa kata sandi?</a>
@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
                 </button>
                 <p class="text-sm text-black text-center mt-3">
                     Belum punya akun?
-                    <a href="signup.php" class="underline text-gray-600">Daftar sekarang</a>
+                    <a href="sign-up" class="underline text-gray-600">Daftar sekarang</a>
                 </p>
             </form>
         </div>

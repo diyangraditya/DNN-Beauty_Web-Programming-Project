@@ -32,7 +32,7 @@
 						name="email"
 						id="email"
 						class="border border-[#FD4E5D] rounded-md py-2 px-3"
-						placeholder="Your Username/Email"
+						placeholder="Your Email"
 						required
 					/>
 					<input
@@ -60,7 +60,7 @@
 				</button>
 				<p class="text-sm text-black text-center mt-3">
 					Sudah menjadi anggota?
-					<a href="index.php" class="underline text-gray-600">Masuk</a>
+					<a href="login" class="underline text-gray-600">Login</a>
 				</p>
 			</form>
 		</div>
