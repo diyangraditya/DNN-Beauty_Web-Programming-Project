@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+
+
+Route::get('/about', [UserController::class, 'about']);
 
 Route::get('/', function () {
     return view('home');
@@ -10,9 +14,9 @@ Route::get('/sign-up', function () {
     return view('signup');
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
+// Route::get('/about', function () {
+//     return view('about');
+// });
 
 Route::get('/arrival', function () {
     return view('arrival');

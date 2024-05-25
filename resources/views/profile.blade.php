@@ -21,7 +21,7 @@
 			<div class="flex gap-x-10">
 				<ul class="flex flex-1 gap-x-5 uppercase justify-between">
 					<li>
-						<a class="hover:underline" href="home">Home</a>
+						<a class="hover:underline" href="/">Home</a>
 					</li>
 					<li>
 						<a class="hover:underline" href="collection">Collection</a>
