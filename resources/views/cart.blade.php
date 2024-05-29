@@ -683,12 +683,10 @@
 						class="font-medium hover:underline hover:cursor-pointer text-[#9F9F9F]"
 						>Links</a
 					>
-					<a class="font-medium hover:underline hover:cursor-pointer">Home</a>
-					<a class="font-medium hover:underline hover:cursor-pointer">Shop</a>
-					<a class="font-medium hover:underline hover:cursor-pointer">About</a>
-					<a class="font-medium hover:underline hover:cursor-pointer"
-						>Contact</a
-					>
+					<a class="font-medium hover:underline hover:cursor-pointer" href="/">Home</a>
+					<a class="font-medium hover:underline hover:cursor-pointer" href="/products">Shop</a>
+					<a class="font-medium hover:underline hover:cursor-pointer" href="/about">About</a>
+					<a class="font-medium hover:underline hover:cursor-pointer" href="/about">Contact</a>
 				</div>
 				<div class="col-span-1 flex flex-col items-start gap-y-5">
 					<a

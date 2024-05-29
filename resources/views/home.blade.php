@@ -10,9 +10,54 @@
         href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic"
         rel="stylesheet" />
     <title>DNN Beauty</title>
+    <style>
+        .notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 5px;
+            z-index: 1000;
+        }
+        .notification.error {
+            background-color: #f44336;
+        }
+    </style>
 </head>
 
 <body class="font-poppins">
+<div id="notification" class="notification"></div>
+    @if (session('success'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var notification = document.getElementById('notification');
+                notification.classList.add('success');
+                notification.textContent = '{{ session('success') }}';
+                notification.style.display = 'block';
+                setTimeout(function() {
+                    notification.style.display = 'none';
+                }, 4000); 
+            });
+        </script>
+    @endif
+
+    @if (session('error'))
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                var notification = document.getElementById('notification');
+                notification.classList.add('error');
+                notification.textContent = '{{ session('error') }}';
+                notification.style.display = 'block';
+                setTimeout(function() {
+                    notification.style.display = 'none';
+                }, 4000); // Durasi dalam milidetik (3000ms = 3 detik)
+            });
+        </script>
+    @endif
+
     <nav class="py-4 px-10">
         <div class="flex items-center gap-x-3 mb-5">
             <img src="./assets/logo.png" alt="Logo DNN" class="h-24" />
@@ -160,10 +205,10 @@
             </div>
             <div class="col-span-1 flex flex-col items-start gap-y-5">
                 <a class="font-medium hover:underline hover:cursor-pointer text-[#9F9F9F]">Links</a>
-                <a class="font-medium hover:underline hover:cursor-pointer">Home</a>
-                <a class="font-medium hover:underline hover:cursor-pointer">Shop</a>
-                <a class="font-medium hover:underline hover:cursor-pointer">About</a>
-                <a class="font-medium hover:underline hover:cursor-pointer">Contact</a>
+                <a class="font-medium hover:underline hover:cursor-pointer" href="/">Home</a>
+                <a class="font-medium hover:underline hover:cursor-pointer" href="/products">Shop</a>
+                <a class="font-medium hover:underline hover:cursor-pointer" href="/about">About</a>
+                <a class="font-medium hover:underline hover:cursor-pointer" href="/about">Contact</a>
             </div>
             <div class="col-span-1 flex flex-col items-start gap-y-5">
                 <a class="font-medium hover:underline hover:cursor-pointer text-[#9F9F9F]">Help</a>

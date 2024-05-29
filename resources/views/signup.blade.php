@@ -12,12 +12,17 @@
 		/>
 		<title>Signup | DNN Beauty</title>
 	</head>
-	<body
-		class="h-screen bg-no-repeat bg-cover bg-login flex items-center justify-center font-poppins"
-	>
+	<body class="h-screen bg-no-repeat bg-cover bg-login flex items-center justify-center font-poppins">
 		<div class="flex-col bg-[#FAE1F5] w-[30%] px-9 py-12">
 			<h1 class="text-[#FF69B4] text-3xl font-bold text-center">Sign Up</h1>
-			<form action="" method="POST" class="flex flex-col mt-14 mb-8">
+			@if ($errors->any())
+				<div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                	<strong class="font-bold">Oops!</strong>
+                	<span class="block sm:inline">{{ $errors->first() }}</span>
+            	</div>
+        	@endif
+			<form action="{{ route('signup.post') }}" method="POST" class="flex flex-col mt-14 mb-8">
+				@csrf
 				<div class="flex flex-col space-y-5">
 					<input
 						type="text"
@@ -25,6 +30,7 @@
 						id="name"
 						class="border border-[#FD4E5D] rounded-md py-2 px-3"
 						placeholder="Your Name"
+						value="{{ old('name')}}"
 						required
 					/>
 					<input
@@ -33,6 +39,7 @@
 						id="email"
 						class="border border-[#FD4E5D] rounded-md py-2 px-3"
 						placeholder="Your Email"
+						value="{{ old('email') }}"
 						required
 					/>
 					<input
@@ -45,8 +52,8 @@
 					/>
 					<input
 						type="password"
-						name="confirm-password"
-						id="confirm-password"
+						name="password_confirmation"
+						id="password_confirmation"
 						class="border border-[#FD4E5D] rounded-md py-2 px-3"
 						placeholder="Confirm Password"
 						required

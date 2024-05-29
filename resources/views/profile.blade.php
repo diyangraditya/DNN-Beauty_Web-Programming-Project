@@ -81,6 +81,11 @@
 							/>
 						</svg>
 					</a>
+					</a>
+					<!-- Tombol Log Out -->
+					<a href="login" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
+						Log Out
+					</a>
 				</div>
 			</div>
 		</nav>
@@ -93,11 +98,14 @@
 				<div class="flex flex-col self-start text-left mt-3 gap-y-5">
 					<div>
 						<p class="text-[#9F9F9F]">Nama</p>
-						<p class="font-medium">Nurul Ariqah</p>
+						
+						<p class="font-medium">{{ $users->name}}</p>
 					</div>
 					<div>
-						<p class="text-[#9F9F9F]">Username Pengguna</p>
-						<p class="font-medium">nurularqh</p>
+						
+						<p class="text-[#9F9F9F]">Email Pengguna</p>
+						<p class="font-medium">{{ $users->email}}</p>
+						
 					</div>
 					<div>
 						<p class="text-[#9F9F9F]">Tanggal Lahir</p>
@@ -199,12 +207,10 @@
 						class="font-medium hover:underline hover:cursor-pointer text-[#9F9F9F]"
 						>Links</a
 					>
-					<a class="font-medium hover:underline hover:cursor-pointer">Home</a>
-					<a class="font-medium hover:underline hover:cursor-pointer">Shop</a>
-					<a class="font-medium hover:underline hover:cursor-pointer">About</a>
-					<a class="font-medium hover:underline hover:cursor-pointer"
-						>Contact</a
-					>
+					<a class="font-medium hover:underline hover:cursor-pointer" href="/">Home</a>
+					<a class="font-medium hover:underline hover:cursor-pointer" href="/products">Shop</a>
+					<a class="font-medium hover:underline hover:cursor-pointer" href="/about">About</a>
+					<a class="font-medium hover:underline hover:cursor-pointer" href="/about">Contact</a>
 				</div>
 				<div class="col-span-1 flex flex-col items-start gap-y-5">
 					<a

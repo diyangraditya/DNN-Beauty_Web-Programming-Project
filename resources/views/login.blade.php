@@ -1,10 +1,3 @@
-<?php
-
-if (isset($_POST['submit'])) {
-    header("Location: home");
-    exit();
-}
-?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -19,16 +12,29 @@ if (isset($_POST['submit'])) {
 <body class="h-screen bg-no-repeat bg-cover bg-login flex items-center justify-center font-poppins">
         <div class="flex flex-col bg-[#FAE1F5] w-[30%] px-9 py-12">
             <h1 class="text-[#FF69B4] text-3xl font-bold text-center">Log In</h1>
-            <form action="home" method="POST" class="flex flex-col mt-14 mb-8">
-                <input type="email" name="email" id="email" class="border border-[#FD4E5D] rounded-md py-2 px-3 mb-5" placeholder="Your Username/Email" required />
+            @if (session('error'))
+                <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                    <strong class="font-bold">Oops!</strong>
+                    <span class="block sm:inline">{{ session('error') }}</span>
+                </div>
+            @elseif (session('success'))
+                <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
+                    <span class="block sm:inline">{{ session('success') }}</span> 
+                </div>   
+            @endif
+            <form action="{{ route('login.post') }}" method="POST" class="flex flex-col mt-14 mb-8">
+                @csrf
+                <input type="email" name="email" id="email" class="border border-[#FD4E5D] rounded-md py-2 px-3 mb-5" placeholder="Your Email" required />
+
                 <input type="password" name="password" id="password" class="border border-[#FD4E5D] rounded-md py-2 px-3 mb-1" placeholder="Your Password" required />
                 <a class="text-sm" href="#">Lupa kata sandi?</a>
-                <button type="submit" class="bg-[#FF69B4] w-fit px-7 self-center text-white mt-10 py-2 font-bold">
-                    Sign In
+                
+                <button type="submit" name="login" class="bg-[#FF69B4] w-fit px-7 self-center text-white mt-10 py-2 font-bold">
+                    Log in
                 </button>
                 <p class="text-sm text-black text-center mt-3">
                     Belum punya akun?
-                    <a href="sign-up" class="underline text-gray-600">Daftar sekarang</a>
+                    <a href="{{ route('signup') }}" class="underline text-gray-600">Daftar sekarang</a>
                 </p>
             </form>
         </div>
