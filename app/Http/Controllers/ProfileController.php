@@ -12,17 +12,6 @@ class ProfileController extends Controller
 {
     public function show()
     {
-        // $user = Auth::user();
-
-        // Mengakses relasi untuk mendapatkan data akun pengguna
-        // $akunPengguna = $user->akunPengguna;
-
-        // $user akan berisi informasi dari model User,
-        // sedangkan $akunPengguna akan berisi informasi dari model AkunPengguna
-
-        // return view('events.show')
-        //     ->with('name', $name)
-        //     ->with('email', $email);
 
         $users = AkunPengguna::all();
 
@@ -31,9 +20,11 @@ class ProfileController extends Controller
     }
     
     public function index(){
-        $users = AkunPengguna::all();
+        $user = Auth::guard('akun_pengguna')->user();
+
     
         
-        return view('/profile', compact('users'));
+        return view('profile', compact('user'));
     }
+    
 }

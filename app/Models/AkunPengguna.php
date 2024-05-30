@@ -2,9 +2,10 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
-class AkunPengguna extends Model
+class AkunPengguna extends Authenticatable implements AuthenticatableContract
 {
     protected $table = 'akun_pengguna';
 
@@ -15,5 +16,5 @@ class AkunPengguna extends Model
         'email',
         'password',
     ];
-    
 }
+

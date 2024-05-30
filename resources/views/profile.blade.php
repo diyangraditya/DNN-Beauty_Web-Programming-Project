@@ -83,12 +83,13 @@
 					</a>
 					</a>
 					<!-- Tombol Log Out -->
-					<a href="login" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
+					<a href="/logout" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600">
 						Log Out
 					</a>
 				</div>
 			</div>
 		</nav>
+		
 		<div class="bg-[#F9BAC9] py-8 text-center relative mb-[30rem] h-[300px]">
 			<h1 class="text-5xl font-bold mb-14">My Profile</h1>
 			<div
@@ -99,12 +100,12 @@
 					<div>
 						<p class="text-[#9F9F9F]">Nama</p>
 						
-						<p class="font-medium">{{ $users->name}}</p>
+						<p class="font-medium">{{ $user->name}}</p>
 					</div>
 					<div>
 						
 						<p class="text-[#9F9F9F]">Email Pengguna</p>
-						<p class="font-medium">{{ $users->email}}</p>
+						<p class="font-medium">{{ $user->email}}</p>
 						
 					</div>
 					<div>
