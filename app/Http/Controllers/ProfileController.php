@@ -27,4 +27,12 @@ class ProfileController extends Controller
         return view('profile', compact('user'));
     }
     
+    public function home(){
+        $user = Auth::guard('akun_pengguna')->user();
+
+    
+        
+        return view('/', compact('user'));
+    }
+    
 }

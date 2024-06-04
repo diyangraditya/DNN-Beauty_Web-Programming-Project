@@ -29,6 +29,13 @@
 </head>
 
 <body class="font-poppins">
+    <div class="text-left font-semibold text-xl my-2">
+        @if(Auth::check())
+            Halo, {{ Auth::user()->name }}!
+        @else
+            Halo, Pengunjung!
+        @endif
+    </div>
 <div id="notification" class="notification"></div>
     @if (session('success'))
         <script>
@@ -53,7 +60,7 @@
                 notification.style.display = 'block';
                 setTimeout(function() {
                     notification.style.display = 'none';
-                }, 4000); // Durasi dalam milidetik (3000ms = 3 detik)
+                }, 4000); 
             });
         </script>
     @endif
@@ -84,6 +91,9 @@
                     <a class="hover:underline" href="about">About Us</a>
                 </li>
             </ul>
+            <div class="profile name">
+               
+            </div>
             <div class="flex gap-x-5 flex-none">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                     stroke="currentColor" class="w-6 h-6">

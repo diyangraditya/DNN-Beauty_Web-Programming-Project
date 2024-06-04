@@ -20,7 +20,15 @@ class AuthController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:akun_pengguna',
+            // 'email' => 'required|string|email|max:255|regex:/^[a-zA-Z0-9._%+-]+@(gmail\.com|co\.id)$/i|unique:akun_pengguna',
+            'email' => [
+                'required',
+                'string',
+                'email',
+                'max:255',
+                'regex:/^[a-zA-Z0-9._%+-]+@(gmail\.com|co\.id)$/i',
+                'unique:akun_pengguna',
+            ],
             'password' => 'required|string|min:5|confirmed',
         ]);
 
@@ -56,6 +64,9 @@ class AuthController extends Controller
     }
     public function logout(){
         Auth::guard('akun_pengguna')->logout();
+        request()->session()->invalidate();
+        request()->session()->regenerateToken();
+
         return redirect()->route('login');
     }
 }
